@@ -11,7 +11,7 @@ var fruits;
 var fruitGroup;
 var fruit1_img, fruit2_img, fruit3_img, fruit4_img, fruit5_img;
 var player_img;
-
+var fruitArray=[];
 
 function preload(){
   back_img = loadImage("jungle.jpg");

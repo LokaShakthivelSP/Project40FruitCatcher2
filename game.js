@@ -54,7 +54,7 @@ class Game{
                      y=500;
                      
                      players[index -1].x = x;
-                     players[index - 1].y = y;
+                     players[index -1].y = y;
                        
 
                          fill("black");
@@ -96,18 +96,22 @@ class Game{
                      
                  }
                  
-                  if (player.index !== null) {
-                    //fill code here, to destroy the objects.
-                    for(var i=0;i<=fruitGroup.length;i++){
-                        if(fruitGroup!==undefined || fruitGroup!==null){
-                            if(fruitGroup.isTouching(player1)||fruitGroup.isTouching(player2)){
-                                fruitGroup.get(i).destroy();
-                                player.score+=1;
-                                player.update();
+                if (player.index !== null) {
+                    //fill code here, to destroy the objects.    
+                    if(fruitGroup!==undefined || fruitGroup!==null){
+                    //    if(fruitGroup.isTouching(player1)||fruitGroup.isTouching(player2)){
+                            for(var i=1;i<=fruitGroup.length;i++){
+                                if(fruitGroup.get(i)!==undefined){
+                                    if(fruitGroup.get(i).isTouching(players)){
+                                        fruitGroup.get(i).destroy();
+                                        player.score+=1;
+                                        player.update();
+                                    }
+                                }
                             }
-                        }
+                    //    }
                     }
-                  }
+                }
 
     }
 
